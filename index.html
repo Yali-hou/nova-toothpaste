@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f8fc">
+  <meta name="description" content="Discover NOVA Clinical White Toothpaste. Fresh Mint, 100 g.">
+  <title>Clinical White Toothpaste — NOVA</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+  <script src="tracking.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner wrap">
+      <div class="brand" aria-label="NOVA — Everyday oral care">
+        <span class="wordmark" aria-hidden="true">NOVA</span>
+        <span class="brand-caption" aria-hidden="true">Everyday oral care</span>
+      </div>
+      <div class="header-tools">
+        <span class="category-label">Our toothpaste</span>
+        <button class="bag" id="open-bag" type="button" aria-haspopup="dialog" aria-controls="bag-panel" aria-expanded="false">
+          <svg viewBox="0 0 24 26" width="23" height="25" fill="none" aria-hidden="true"><path d="M4 8.5h16l1.5 15h-19l1.5-15Z"/><path d="M8 8.5V5a4 4 0 0 1 8 0v3.5"/></svg>
+          <span id="bag-count">Bag (0)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="introduction" aria-labelledby="hero-heading">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">NOVA Clinical White</p>
+          <h1 id="hero-heading">A whiter smile.<br><em>Fresher breath.</em></h1>
+          <!-- Shop Now leads to the single purchase section; it never adds an item. -->
+          <a class="shop-button" id="shop-now" href="#product">
+            <span>Shop Now</span>
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg>
+          </a>
+          <p class="product-facts"><span>100 g</span><span aria-hidden="true">/</span><span>Fresh Mint</span></p>
+        </div>
+        <figure class="hero-photo">
+          <img src="assets/nova-hero-hd.jpg" width="1536" height="1024" alt="NOVA Clinical White Fresh Mint toothpaste and its matching box beside a bathroom sink." fetchpriority="high" draggable="false">
+          <span class="photo-label" aria-hidden="true">For a whiter, fresher smile.</span>
+        </figure>
+      </div>
+
+      <div class="benefits" aria-label="Product features">
+        <div class="benefit"><span class="benefit-number" aria-hidden="true">01</span><div><h2>Clinical White</h2><p>Helps remove surface stains.</p></div></div>
+        <div class="benefit"><span class="benefit-number" aria-hidden="true">02</span><div><h2>Fresh Breath</h2><p>Helps keep your breath fresh.</p></div></div>
+        <div class="benefit"><span class="benefit-number" aria-hidden="true">03</span><div><h2>Fresh Mint</h2><p>Clean mint flavour.</p></div></div>
+      </div>
+    </section>
+
+    <section class="product-section" id="product" aria-labelledby="product-heading">
+      <figure class="product-photo">
+        <img src="assets/nova-tube-studio.png" width="1536" height="1024" alt="One NOVA Clinical White Fresh Mint toothpaste tube, 100 g, on a pale blue surface." draggable="false">
+      </figure>
+      <div class="product-copy">
+        <p class="eyebrow">NOVA Oral Care</p>
+        <h2 id="product-heading" tabindex="-1">Clinical White Toothpaste</h2>
+        <p class="variant">Fresh Mint <span aria-hidden="true">·</span> 100 g</p>
+        <p class="price">AUD 6.00 <span>per tube</span></p>
+        <button class="add-button" id="add-to-bag" type="button"><span id="add-label">Add to Bag</span><span id="add-symbol" aria-hidden="true">+</span></button>
+        <span class="sr-only" id="bag-announcement" role="status" aria-live="polite" aria-atomic="true"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-inner"><span class="wordmark">NOVA</span><span class="brand-caption">Everyday oral care</span></div></footer>
+
+  <!-- A read-only bag preview; adding an item remains a separate action. -->
+  <dialog class="bag-panel" id="bag-panel" aria-labelledby="bag-heading">
+    <div class="bag-panel-header">
+      <h2 id="bag-heading">Your bag</h2>
+      <button class="bag-close" id="close-bag" type="button" autofocus>Close</button>
+    </div>
+    <div class="bag-panel-body">
+      <div class="bag-empty" id="bag-empty">
+        <svg viewBox="0 0 24 26" width="40" height="44" fill="none" aria-hidden="true"><path d="M4 8.5h16l1.5 15h-19l1.5-15Z"/><path d="M8 8.5V5a4 4 0 0 1 8 0v3.5"/></svg>
+        <h3>Your bag is empty.</h3>
+        <p>Take a look at Clinical White Toothpaste.</p>
+      </div>
+      <div id="bag-filled" hidden>
+        <div class="bag-item">
+          <img src="assets/nova-tube-studio.png" width="1536" height="1024" alt="NOVA Clinical White toothpaste tube">
+          <div class="bag-item-copy">
+            <h3>Clinical White Toothpaste</h3>
+            <p>Fresh Mint · 100 g</p>
+            <p>Quantity: 1</p>
+            <p class="bag-item-price">AUD 6.00</p>
+          </div>
+        </div>
+        <div class="bag-subtotal"><span>Subtotal</span><span>AUD 6.00</span></div>
+      </div>
+    </div>
+    <div class="bag-panel-footer"><button class="browse-button" id="continue-browsing" type="button">Continue browsing</button></div>
+  </dialog>
+</body>
+</html>
