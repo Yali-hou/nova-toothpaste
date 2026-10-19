@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA — Overlay preview</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #ecf0f5; color: #193c80; font: 16px/1.7 Arial, sans-serif; }
+    main { max-width: 700px; margin: 90px auto; padding: 24px; }
+    h1 { font: 42px Georgia, serif; } p { color: #52627f; }
+    .label { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; }
+    article { background: #f5f8fc; padding: 40px; margin: 34px 0; border: 1px solid #d2ddee; }
+    h2 { font: 34px Georgia, serif; }
+    button { background: #193c80; color: #fff; border: 0; padding: 16px 28px; font: inherit; cursor: pointer; }
+    button:focus-visible { outline: 3px solid #0c8394; outline-offset: 4px; }
+    details { margin-top: 40px; } summary { cursor: pointer; }
+    pre { padding: 20px; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; color: #52627f; background: #fff; }
+    dialog { width: min(1440px, calc(100% - 48px)); height: calc(100dvh - 48px); max-width: none; max-height: none; padding: 0; border: 1px solid #d2ddee; background: #f5f8fc; }
+    dialog::backdrop { background: rgb(14 29 51 / 48%); }
+    .overlay-toolbar { display: flex; align-items: center; height: 44px; padding-inline: 16px; border-bottom: 1px solid #d2ddee; background: #fff; }
+    .overlay-toolbar button { padding: 5px 10px; background: transparent; color: #193c80; font-size: 13px; }
+    .overlay-toolbar span { margin-left: auto; font-size: 11px; color: #52627f; }
+    iframe { display: block; width: 100%; height: calc(100% - 44px); border: 0; }
+    @media (max-width: 650px) { dialog { width: 100%; height: 100dvh; border: 0; margin: 0; } main { margin-top: 30px; } article { padding: 25px; } }
+  </style>
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <main>
+    <span class="label">Embedding preview · outside the landing page</span>
+    <h1>Back to where you were.</h1>
+    <p>This demonstration keeps the page in an overlay. Closing it restores the surrounding page and its scroll position. Reopening retains the bag state for this visit.</p>
+    <article>
+      <span class="label">NOVA · Everyday oral care</span>
+      <h2>A whiter smile.<br>Fresher breath.</h2>
+      <p>Clinical White Toothpaste · Fresh Mint · 100 g</p>
+      <button type="button" id="open-landing">Learn More</button>
+    </article>
+    <p>The NOVA page itself is <code>index.html</code>. This separate demonstration is a reference for connecting it to your DICE overlay.</p>
+    <details><summary>Preview integration events</summary><p>Events remain in this preview’s memory. Connect your DICE collector to save participant data.</p><pre id="event-log">Waiting for page events…</pre></details>
+  </main>
+  <dialog id="landing-dialog" aria-label="NOVA toothpaste">
+    <!-- Demo host navigation only; not part of index.html. -->
+    <div class="overlay-toolbar"><button type="button" id="back-to-feed">← Back</button><span>Overlay preview · host navigation</span></div>
+    <iframe id="landing-frame" title="NOVA Clinical White Toothpaste"></iframe>
+  </dialog>
+</body>
+</html>
